@@ -101,6 +101,8 @@ body{
 @media(max-width: 600px){
   .card-item{
     margin: 0 2% 15px;
+    transition:none;
+    transform:initial;
   }
 }
 @media(max-width: 350px){
