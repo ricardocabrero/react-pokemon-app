@@ -102,7 +102,9 @@ body{
   .card-item{
     margin: 0 2% 15px;
     transition:none;
-    transform:initial;
+  }
+  .card-item:hover{
+    transform: scale(1);
   }
 }
 @media(max-width: 350px){
