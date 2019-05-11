@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Evolution } from './Evolution';
 
 const URL = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -14,20 +15,18 @@ export class CardItem extends Component{
         img: '',
         id: '',
         types: [],
-        species: ''
     }
  
     _fetchPokemon(name){
         fetch(URL+name)
         .then(res => res.json())
         .then(data => {
-            const { name, sprites, id, types, species } = data
+            const { name, sprites, id, types } = data
             this.setState({
                 name: name,
                 img: sprites.front_shiny,
                 id: id,
                 types: types,
-                species: species.name
             })
         })
     }
@@ -46,22 +45,14 @@ export class CardItem extends Component{
         )
     }
 
-    _printSpecie(specie, name){
-        if(specie === name){ //en el caso de ser false, devolvería la evolución, pero no he sabido
-                            //de donde extraer el dato y lo he dejado siempre en true para mostrar algo
-            return <p>Evoluciona de: <span>{specie}</span></p>
-        }
-        return false
-    }
-    
     componentDidMount(){
         const { pokemon } = this.props
         this._fetchPokemon(pokemon)       
     }
 
     render(){
-        const { theClass } = this.props
-        const { name, img, id, types, species } = this.state
+        const { pokemon, theClass } = this.props
+        const { name, img, id, types } = this.state
         const forLink = window.location.href.indexOf('detail') > 1 
         ?  `/`
         : `/detail/${name}`
@@ -84,7 +75,7 @@ export class CardItem extends Component{
                         {this._printTypes(types)}
                     </div>
                     <div className="evolution">
-                        {this._printSpecie(species, name)}
+                        <Evolution name={pokemon}/>
                     </div>
                 </div>
             </Link>
