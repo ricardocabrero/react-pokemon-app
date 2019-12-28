@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React-pokemon-app
 
-[http://rc-react-pokemon.surge.sh/](http://rc-react-pokemon.surge.sh/)
+[http://rc-react-pokemon.surge.sh/](http://rc-react-pokemon.surge.sh/?target=_blank)
