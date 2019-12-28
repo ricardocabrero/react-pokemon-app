@@ -4,4 +4,4 @@ React-pokemon-app
 
 [http://rc-react-pokemon.surge.sh/](http://rc-react-pokemon.surge.sh/)
 
-<a href="http://rc-react-pokemon.surge.sh/" target="_blank">http://rc-react-pokemon.surge.sh/</a>
+
